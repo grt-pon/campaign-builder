@@ -335,14 +335,10 @@ function renderAll(){
 
 function renderList(){
   const el=document.getElementById('camp-list');
-  const empty=document.getElementById('list-empty');
   if(campaigns.length===0){
-    el.innerHTML='';
-    el.appendChild(empty);
-    empty.style.display='block';
+    el.innerHTML='<div class="list-empty" id="list-empty">まだキャンペーンが登録されていません</div>';
     return;
   }
-  empty.style.display='none';
   el.innerHTML='';
   campaigns.forEach((c,i)=>{
     const div=document.createElement('div');
